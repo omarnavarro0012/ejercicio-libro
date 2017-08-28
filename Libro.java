@@ -39,7 +39,14 @@ public class Libro
   
    public void cambianumdRef(String ndRef)
    {
-       numDeRef=ndRef;
+       if (ndRef.length()>=3)
+     {
+          numDeRef=ndRef;
+       }
+       else
+       {
+           numDeRef=numDeRef;
+        }
    }
    public String DetallesGen()
    {
