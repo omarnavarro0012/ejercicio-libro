@@ -5,6 +5,7 @@ public class Libro
     private String autor;
     private int paginas;
     private String numDeRef;
+    private int prestamos;
     
     //constructor
     public Libro(String tit,String aut,int pag)
@@ -13,6 +14,7 @@ public class Libro
         autor=aut;
         paginas=pag;
         numDeRef="";
+        prestamos=0;
     }
     //metodos   
     
@@ -30,23 +32,31 @@ public class Libro
    public String dimeNumref()
    {
        return numDeRef;
-    }
+   }
     
    public int cuantasPaginas()
    {
        return paginas;
-    }
+   }
   
    public void cambianumdRef(String ndRef)
    {
        if (ndRef.length()>=3)
      {
           numDeRef=ndRef;
-       }
+     }
        else
        {
            numDeRef=numDeRef;
         }
+   }
+   public void prestar()
+   {
+       prestamos+=1;
+   }
+   public int dimePrestamos()
+   {
+       return prestamos;
    }
    public String DetallesGen()
    {
@@ -62,6 +72,9 @@ public class Libro
        detalles+=",";
        detalles+="Biblioteca: ";
        detalles+=numDeRef;
+       detalles+=",";
+       detalles+="Prestado: ";
+       detalles+=prestamos;
        detalles+=".";
        
        return detalles;
